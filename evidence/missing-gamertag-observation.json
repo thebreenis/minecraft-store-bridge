@@ -1,0 +1,36 @@
+{
+  "kind": "redacted-user-supplied-observation",
+  "date": "2026-11-09",
+  "package": "1.1.500.211",
+  "windowsBuild": "26200",
+  "installationChecksPassed": 11,
+  "collectionErrors": 0,
+  "registryViews": [
+    "Registry64",
+    "Registry32"
+  ],
+  "identity": {
+    "xboxAccountId": "present",
+    "xboxXuid": "present",
+    "xboxGamertag": "value_missing",
+    "storeAccountId": "present",
+    "windowsAccountsMatch": true
+  },
+  "startup": {
+    "stage": "account_preflight",
+    "verdict": "unverified",
+    "missingFieldWinerror": 2,
+    "bridgePresent": false
+  },
+  "followup": {
+    "package": "1.1.500.212",
+    "report": "User confirmed complete success."
+  },
+  "omitted": [
+    "Gamertags",
+    "account IDs",
+    "machine identifiers",
+    "process IDs",
+    "full user report"
+  ]
+}

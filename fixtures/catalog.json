@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "title": "Example Free Skins",
+      "description": "Synthetic fixture, no downloadable game assets.",
+      "packType": "SkinPack",
+      "price": 0,
+      "minEngine": [
+        1,
+        1,
+        0
+      ],
+      "comingSoon": false
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "title": "Example Modern World",
+      "description": "Synthetic incompatible world.",
+      "packType": "WorldTemplate",
+      "price": 20,
+      "minEngine": [
+        1,
+        20,
+        0
+      ],
+      "comingSoon": false
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "title": "Example Unknown Free Pack",
+      "description": "Synthetic free item with unknown compatibility.",
+      "packType": "ResourcePack",
+      "price": 0,
+      "minEngine": null,
+      "comingSoon": false
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "title": "Example Future Pack",
+      "description": "Synthetic coming-soon item, not claimable.",
+      "packType": "ResourcePack",
+      "price": null,
+      "minEngine": null,
+      "comingSoon": true
+    }
+  ]
+}

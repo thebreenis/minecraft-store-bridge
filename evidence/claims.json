@@ -1,0 +1,197 @@
+{
+  "recorded": "2026-11-10",
+  "baseline": "9ed87e050c40f9683248e7fe9a79789ea5244e08",
+  "note": "Live entries summarize development/user observations; they are not redistributed raw service captures. Offline entries can be rerun.",
+  "claims": [
+    {
+      "id": "AUTH-01",
+      "claim": "Apple TV token chain and native sign-in coexist",
+      "status": "developer-machine-live",
+      "sources": [
+        "reference/runtime/appletv_auth_probe.py",
+        "reference/native/xinput_proxy.cpp"
+      ],
+      "qualification": "Public identity/configuration changes alone were insufficient; broad native account replacement regressed sign-in."
+    },
+    {
+      "id": "AUTH-02",
+      "claim": "Missing Gamertag metadata no longer blocks matching account IDs",
+      "status": "affected-user-confirmed",
+      "sources": [
+        "reference/runtime/account_guard.py",
+        "tests/test_account_policy.py"
+      ],
+      "qualification": "Second-PC .211 report and startup events identified missing display name; user confirmed .212 works. Does not solve all registry staleness."
+    },
+    {
+      "id": "CAT-01",
+      "claim": "Multiple distinct offers and repeated Store entry worked",
+      "status": "developer-machine-live",
+      "sources": [
+        "reference/native/xinput_proxy.cpp",
+        "docs/07-native-hooks.md"
+      ],
+      "qualification": "Native key identity and callback lifetime/completion corrections were exercised; historical raw captures not distributed."
+    },
+    {
+      "id": "CAT-02",
+      "claim": "Catalog bootstrap is snapshot-based",
+      "status": "source-inspected",
+      "sources": [
+        "reference/runtime/wallet_https_server.py",
+        "reference/runtime/runtime_paths.py"
+      ],
+      "qualification": "No exhaustive live Marketplace pagination guarantee."
+    },
+    {
+      "id": "OWN-01",
+      "claim": "Ownership is derived from Purchased entitlements",
+      "status": "source-inspected",
+      "sources": [
+        "reference/runtime/store_ui_adapter.py",
+        "reference/runtime/live_wallet_adapter.py"
+      ],
+      "qualification": "Subscription entries are not permanent license evidence."
+    },
+    {
+      "id": "COMP-01",
+      "claim": "Unknown compatibility is conservatively disabled",
+      "status": "source-inspected",
+      "sources": [
+        "reference/runtime/store_ui_adapter.py",
+        "reference/native/store_ui.h"
+      ],
+      "qualification": "Current producer mostly U, one known I. No general manifest scanner."
+    },
+    {
+      "id": "FREE-01",
+      "claim": "Verified-free claims succeeded with inventory confirmation",
+      "status": "developer-machine-live",
+      "sources": [
+        "reference/runtime/store_ui_adapter.py",
+        "docs/09-commerce.md"
+      ],
+      "qualification": "Free claim is an account mutation; no full transaction/inventory dumps published."
+    },
+    {
+      "id": "UI-01",
+      "claim": "Completion chime was heard by the user",
+      "status": "user-confirmed",
+      "sources": [
+        "reference/native/store_ui.h",
+        "docs/07-native-hooks.md"
+      ],
+      "qualification": "Audible confirmation, not merely a successful native-call return."
+    },
+    {
+      "id": "PAID-01",
+      "claim": "One authorized 160-Minecoin offer purchase succeeded",
+      "status": "user-confirmed",
+      "sources": [
+        "reference/runtime/store_ui_adapter.py",
+        "docs/09-commerce.md"
+      ],
+      "qualification": "Historical one-use permit only; not a generic paid-offer feature."
+    },
+    {
+      "id": "COIN-01",
+      "claim": "Official Windows client recovered an earlier pending 320 purchase",
+      "status": "developer-machine-live",
+      "sources": [
+        "docs/09-commerce.md",
+        "reference/runtime/windows_coin_redemption.py"
+      ],
+      "qualification": "Separate event from bridge fulfillment; private captures excluded."
+    },
+    {
+      "id": "COIN-02",
+      "claim": "Subsequent 320 top-up was credited via bridge Windows restore flow",
+      "status": "user-confirmed",
+      "sources": [
+        "reference/runtime/windows_coin_redemption.py",
+        "reference/runtime/coin_topup.py"
+      ],
+      "qualification": "Exact expected wallet increase and native cleanup observed; larger packages not purchased live."
+    },
+    {
+      "id": "COIN-03",
+      "claim": "Five products have routing/recovery coverage",
+      "status": "offline-tested",
+      "sources": [
+        "tests/test_coin_redemption.py",
+        "reference/native/coin_checkout.h"
+      ],
+      "qualification": "Offline coverage cannot prove all prices, markets or payments."
+    },
+    {
+      "id": "COIN-04",
+      "claim": "Stale cancellation cannot cancel a newer attempt",
+      "status": "offline-tested",
+      "sources": [
+        "tests/test_coin_redemption.py",
+        "reference/runtime/coin_topup.py"
+      ],
+      "qualification": "Attempt-bound PRP3/CAN2/TOP2; receipt and account checks retained."
+    },
+    {
+      "id": "INSTALL-01",
+      "claim": "Certificate/install/loopback order repaired fresh reinstall",
+      "status": "developer-machine-live",
+      "sources": [
+        "reference/installer/Install.ps1",
+        "reference/installer/Install-Trust.ps1"
+      ],
+      "qualification": "Old child error not captured; reordered install succeeded and package/loopback checked."
+    },
+    {
+      "id": "DIAG-01",
+      "claim": "Collector and startup stages identify pre-auth failures",
+      "status": "affected-user-confirmed",
+      "sources": [
+        "reference/installer/Collect-Diagnostics.ps1",
+        "reference/runtime/startup_diagnostics.py"
+      ],
+      "qualification": "Collected reports distinguish missing display name from matching stable identity; no raw tokens required."
+    },
+    {
+      "id": "REGION-01",
+      "claim": "Top-up price text comes from Windows Store formatting",
+      "status": "source-inspected",
+      "sources": [
+        "reference/native/coin_checkout.h",
+        "docs/09-commerce.md"
+      ],
+      "qualification": "Modern Minecraft session request still has fixed locale/region fields; not all markets tested."
+    },
+    {
+      "id": "RENEW-01",
+      "claim": "Automatic long-session token renewal",
+      "status": "not-implemented",
+      "sources": [
+        "reference/runtime/auth_session_cache.py",
+        "docs/04-authentication.md"
+      ],
+      "qualification": "An unexpired DPAPI cache is not automatic renewal."
+    },
+    {
+      "id": "MULTI-01",
+      "claim": "LAN worked; invite-based online joining unresolved",
+      "status": "unresolved",
+      "sources": [
+        "docs/13-failure-history.md",
+        "docs/01-scope-evidence.md"
+      ],
+      "qualification": "Mutual legacy friendship seen; later host lobby 403 not established as failed-join cause."
+    },
+    {
+      "id": "CUSTOM-01",
+      "claim": "Synthetic independent provider demonstrates separation",
+      "status": "offline-tested",
+      "sources": [
+        "examples/offline_marketplace.py",
+        "tests/test_synthetic.py"
+      ],
+      "qualification": "No native integration, paid provider or pack payload is claimed by this example."
+    }
+  ]
+}

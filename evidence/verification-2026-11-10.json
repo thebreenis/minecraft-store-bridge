@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-10",
+  "referenceFiles": 37,
+  "referenceValidation": "Every snapshot file byte-matched pinned upstream Git blob; SHA256 manifest verified.",
+  "offlineTests": 46,
+  "offlineResult": "passed",
+  "networkPolicy": "socket connect and requests Session.request blocked during tests",
+  "syntheticDemo": "passed",
+  "publicationAudit": "passed",
+  "liveOperationsPerformedDuringPublication": [],
+  "limitations": [
+    "No new authentication, purchase, redemption or game launch performed for research publication.",
+    "Historical live observations are summarized separately."
+  ],
+  "pinnedSourceFetch": "Fresh clone and detached checkout succeeded; all 37 reference files also matched the fresh checkout Git blobs."
+}

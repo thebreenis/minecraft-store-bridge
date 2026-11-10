@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/thebreenis/minecraft-apple-tv-edition-x64",
+  "commit": "9ed87e050c40f9683248e7fe9a79789ea5244e08",
+  "release": "v1.0.2",
+  "packageVersion": "1.1.500.212",
+  "engineVersion": "1.1.5.0",
+  "inputs": {
+    "Minecraft-1.1.5.0.Appx": "67E14091B5E764007E3F246B8D14A123429CBF2D464A1E79A6A525DC2A8BADEB",
+    "Minecraft_1.1.5_decrypted.tipa": "E22F698B96A07E86120813F6559AD1AA097E920FB48D2A206FF4705AF42C9D08"
+  }
+}
